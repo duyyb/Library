@@ -2,153 +2,163 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
 </head>
 
 <body>
-    <div>
-        <h2 class=" text-center m-5">BorrowBook List</h2>
-        <div class="row">
-            <div class="col-12">
-                <table class="table">
-                    <tr>
-                        <th>Id</th>
-                        <th>BookCode</th>
-                        <th>Category</th>
-                        <th>BorrowDay</th>
-                        <th>ReturnDate</th>
-                        <th>UserName</th>
-                        <td>
-                            <!--<p id="books" />-->
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+  <div>
+    <h2 class=" text-center m-5">BorrowBook List</h2>
+    <div class="row">
+      <div class="col-12">
+        <table class="table">
+          <tr>
+            <th>Id</th>
+            <th>BookCode</th>
+            <th>Category</th>
+            <th>BorrowDay</th>
+            <th>ReturnDate</th>
+            <th>UserName</th>
+            <td>
+              <!--<p id="books" />-->
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <div>
-        <h2>Search by Id and Update BorrowBook</h2>
-        <input type="text" id="bookId" size="9" placeholder="Enter Id" />
-        <input type="button" data-bs-toggle="modal" value="Search" data-bs-target="#exampleModalFullscreen" />
+  </div>
+
+  <div>
+    <h2>Search by Id and Update BorrowBook</h2>
+    <input type="text" id="bookId" size="9" placeholder="Enter Id" />
+    <input type="button" data-bs-toggle="modal" value="Search" data-bs-target="#exampleModalFullscreenDay" />
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal fade show" id="exampleModalFullscreenDay" tabindex="-1"
+        aria-labelledby="exampleModalFullscreenLabel" aria-modal="true">
         <div class="modal-dialog modal-fullscreen">
-            <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1"
-                aria-labelledby="exampleModalFullscreenLabel" aria-modal="true" >
-                <div class="modal-dialog modal-fullscreen">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Full screen modal</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form class="row g-3 needs-validation" novalidate>
-                                <div class="col-md-1">
-                                  <label for="validationCustom01" class="form-label">Id</label>
-                                  <input type="text" class="form-control" id="validationCustom01" value="" required disabled>
-                                </div>
-                                <div class="col-md-1">
-                                  <label for="validationCustom02" class="form-label">BookCode</label>
-                                  <input type="text" class="form-control" id="validationCustom02" value="" required disabled>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="validationCustom05" class="form-label">Category</label>
-                                    <input type="text" class="form-control" id="validationCustom05" required disabled>
-                                  </div>
-                                <div class="col-md-2">
-                                  <label for="validationCustomUsername" class="form-label">BorrowDay</label>
-                                  <div class="input-group has-validation">
-                                    <input type="date" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                  </div>
-                                </div>
-                                <div class="col-md-2">
-                                  <label for="validationCustom03" class="form-label">ReturnDate</label>
-                                  <input type="date" class="form-control" id="validationCustom03" required>
-                                </div>
-                                <div class="col-md-2">
-                                  <label for="validationCustom04" class="form-label">UserName</label>
-                                  <select class="form-select" id="Type" required>
-                                  </select>
-                                </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                          </div>
-                    </div>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Update BorrowBook</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-1">
+                  <label for="validationCustom01" class="form-label">Id</label>
+                  <input type="text" class="form-control" id="validationCustom01" value="" required disabled>
+                </div>
+                <div class="col-md-1">
+                  <label for="validationCustom02" class="form-label">BookCode</label>
+                  <input type="text" class="form-control" id="validationCustom02" value="" required disabled>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationCustom05" class="form-label">Category</label>
+                  <input type="text" class="form-control" id="validationCustom05" required disabled>
+                </div>
+                <div class="col-md-2">
+                  <label for="validationCustomUsername" class="form-label">BorrowDay</label>
+                  <div class="input-group has-validation">
+                    <input type="date" class="form-control" id="validationCustomUsername"
+                      aria-describedby="inputGroupPrepend" required>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label for="validationCustom03" class="form-label">ReturnDate</label>
+                  <input type="date" class="form-control" id="validationCustom03" required>
+                </div>
+                <div class="col-md-2">
+                  <label for="validationCustom04" class="form-label">UserName</label>
+                  <select class="form-select" id="Type" required>
+                  </select>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
-
+          </div>
         </div>
-        <br />
-        <div>
-            <h2>Search by Id and Update ReturnDate </h2>
-            <input type="text" id="bookName" size="10" placeholder="Enter Id" />
-            <input type="button" value="Search" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen"  />
-            <div class="modal-dialog modal-fullscreen">
-                <div class="modal fade show" id="exampleModalFullscreen" tabindex="-1"
-                    aria-labelledby="exampleModalFullscreenLabel" aria-modal="true" >
-                    <div class="modal-dialog modal-fullscreen">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Full screen modal</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form class="row g-3 needs-validation" novalidate>
-                                    <div class="col-md-1">
-                                      <label for="validationCustom01" class="form-label">Id</label>
-                                      <input type="text" class="form-control" id="validationCustom01" value="" required disabled>
-                                    </div>
-                                    <div class="col-md-1">
-                                      <label for="validationCustom02" class="form-label">BookCode</label>
-                                      <input type="text" class="form-control" id="validationCustom02" value="" required disabled>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label for="validationCustom05" class="form-label">Category</label>
-                                        <input type="text" class="form-control" id="validationCustom05" required disabled>
-                                      </div>
-                                    <div class="col-md-2">
-                                      <label for="validationCustomUsername" class="form-label">BorrowDay</label>
-                                      <div class="input-group has-validation">
-                                        <input type="date" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                      </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                      <label for="validationCustom03" class="form-label">ReturnDate</label>
-                                      <input type="date" class="form-control" id="validationCustom03" required>
-                                    </div>
-                                    <div class="col-md-2">
-                                      <label for="validationCustom04" class="form-label">UserName</label>
-                                      <select class="form-select" id="Type" required>
-                                      </select>
-                                    </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                              </div>
-                        </div>
+
+      </div>
+    </div>
+    <br />
+    <div>
+      <h2>Search by Id and Update ReturnDate </h2>
+      <input type="text" id="bookName" size="10" placeholder="Enter Id" />
+      <input type="button" value="Search" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreenDate" />
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal fade show" id="exampleModalFullscreenDate" tabindex="-1"
+          aria-labelledby="exampleModalFullscreenLabel" aria-modal="true">
+          <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Update ReturnDate</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form class="row g-3 needs-validation" novalidate>
+                  <div class="col-md-1">
+                    <label for="validationCustom06" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="validationCustom06" value="" required disabled>
+                  </div>
+                  <div class="col-md-1">
+                    <label for="validationCustom07" class="form-label">BookCode</label>
+                    <input type="text" class="form-control" id="validationCustom07" value="" required disabled>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="validationCustom08" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="validationCustom08" required disabled>
+                  </div>
+                  <div class="col-md-2">
+                    <label for="validationCustomUsername" class="form-label">BorrowDay</label>
+                    <div class="input-group has-validation">
+                      <input type="date" class="form-control" id="validationCustomUsername"
+                        aria-describedby="inputGroupPrepend" disabled required />
                     </div>
-                </div>
+                  </div>
+                  <div class="col-md-2">
+                    <label for="validationCustom09" class="form-label">ReturnDate</label>
+                    <input type="date" class="form-control" id="validationCustom09" required>
+                  </div>
+                  <div class="col-md-2">
+                    <label for="validationCustom" class="form-label" aria-disabled="">UserName</label>
+                    <select class="form-select" id="Type" required disabled>
+                    </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
 
 
+      </div>
+    </div>
+  
 
-        <!--js-->
-        <script src="./js/BorrowBookList.js"></script>
-        <script src="./js/DropdownUserName.js"></script>
+
+
+
+      <!--js-->
+      <script src="./js/BorrowBookList.js"></script>
+      <script src="./js/DropdownUserName.js"></script>
 </body>
 
 </html>
